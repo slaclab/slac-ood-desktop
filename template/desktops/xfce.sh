@@ -1,4 +1,3 @@
-echo 'xfce...'
 
 # Remove any preconfigured monitors
 if [[ -f "${HOME}/.config/monitors.xml" ]]; then
