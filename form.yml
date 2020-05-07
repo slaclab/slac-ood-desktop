@@ -4,14 +4,27 @@ form:
   - desktop
   - bc_account
   - bc_num_hours
-  - bc_num_slots
+  - bc_num_cores
   - mem
   - num_gpus
   - gpu_type
   - bc_vnc_resolution
   - bc_email_on_started
 attributes:
-  desktop: "xfce"
+  #desktop: "xfce"
+  container_image:
+    widget: "hidden_field"
+    value: "/afs/slac/package/singularity/images/xfce/ubuntu18.04/xfce@ubuntu18.04.sif"
+  desktop:
+    widget: "select"
+    label: Desktop Environment 
+    options:
+    - ["xfce","xfce"]
+    - ["mate","mate"]
+    help: |
+      Chose whether to use [xfce] or [mate] for your desktop
+      [xfce]: https://www.xfce.org/
+      [mate]: https://ubuntu-mate.org/
   bc_vnc_idle: 30
   bc_vnc_resolution:
     required: true
@@ -26,7 +39,8 @@ attributes:
     widget: "number_field"
     help: |
       Number of hours for which the Desktop instance will run for. Note that after 30 mins of inactivity, the Desktop will automatically terminate.
-  bc_num_slots:
+  bc_num_slots: 1
+  bc_num_cores:
     widget: "number_field"
     label: "Number of CPU cores"
     value: 1
