@@ -5,6 +5,7 @@ category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
 description: |
-  This app will launch an interactive desktop on one or more compute nodes. You
-  will have full access to the resources these nodes provide. This is analogous
+  This [app] will launch an interactive graphical desktop on a compute node. This is analogous
   to an interactive batch job.
+
+  [app]: https://github.com/slaclab/slac-ood-desktop

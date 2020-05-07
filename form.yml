@@ -1,18 +1,65 @@
 ---
-attributes:
-  desktop: "xfce"
-  bc_vnc_idle: 0
-  bc_vnc_resolution:
-    required: true
-  node_type: null
-
 form:
   - bc_vnc_idle
   - desktop
   - bc_account
-  - bc_queue
   - bc_num_hours
   - bc_num_slots
-  - node_type
+  - mem
+  - num_gpus
+  - gpu_type
   - bc_vnc_resolution
   - bc_email_on_started
+attributes:
+  desktop: "xfce"
+  bc_vnc_idle: 30
+  bc_vnc_resolution:
+    required: true
+  bc_account:
+    label: "Account"
+    help: |
+      Slurm [Account and Partition] to launch the Desktop on
+
+      [Account and Partition]: https://confluence.slac.stanford.edu/display/SCSPub/Slurm+Batch
+    value: "shared"
+  bc_num_hours:
+    widget: "number_field"
+    help: |
+      Number of hours for which the Desktop instance will run for. Note that after 30 mins of inactivity, the Desktop will automatically terminate.
+  bc_num_slots:
+    widget: "number_field"
+    label: "Number of CPU cores"
+    value: 1
+    help: |
+      Number of cpu cores available for Desktop instance
+    min: 1
+    max: 44
+    step: 1
+  mem:
+    widget: "number_field"
+    label: "Total Memory to allocate"
+    value: "2048"
+    help:
+      Total memory for Desktop instance in metabytes
+    min: 128
+    max: 256000
+    step: 128
+  gpu_type:
+    widget: "select"
+    label: "GPU Type"
+    help: |
+      Make and model of GPU(s) to request
+    options:
+      - [ "Any", "Any" ]
+      - [ "Nvidia Geforce 2080Ti", "geforce_rtx_2080_ti" ]
+      - [ "Nvidia Geforce 1080Ti", "geforce_gtx_1080_ti" ]
+      - [ "Nvidia Tesla V100", "v100" ]
+  num_gpus:
+    widget: "number_field"
+    label: "Number of GPUs"
+    value: 0
+    help: |
+      Number of GPUs requested
+    min: 0
+    max: 10
+    step: 1
