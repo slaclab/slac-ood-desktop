@@ -2,7 +2,7 @@
 form:
   - bc_vnc_idle
   - desktop
-  - bc_account
+  - slurm_account
   - bc_num_hours
   - bc_num_cores
   - mem
@@ -10,11 +10,12 @@ form:
   - gpu_type
   - bc_vnc_resolution
   - bc_email_on_started
+  - container_image
 attributes:
   #desktop: "xfce"
   container_image:
     widget: "hidden_field"
-    value: "/afs/slac/package/singularity/images/xfce/ubuntu18.04/xfce@ubuntu18.04.sif"
+    value: "/sdf/sw/images/xfce/ubuntu18.04/xfce@ubuntu18.04.sif"
   desktop:
     widget: "select"
     label: Desktop Environment 
@@ -28,12 +29,12 @@ attributes:
   bc_vnc_idle: 30
   bc_vnc_resolution:
     required: true
-  bc_account:
+  slurm_account:
     label: "Account"
     help: |
-      Slurm [Account and Partition] to launch the Desktop on
+      Slurm [Partition] to launch the Desktop on
 
-      [Account and Partition]: https://confluence.slac.stanford.edu/display/SCSPub/Slurm+Batch
+      [Partition]: /public/doc/#/batch-compute?id=partition
     value: "shared"
   bc_num_hours:
     widget: "number_field"
