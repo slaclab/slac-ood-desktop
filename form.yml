@@ -10,12 +10,16 @@ form:
   - gpu_type
   - bc_vnc_resolution
   - bc_email_on_started
-  - container_image
+  - SINGULARITY_IMAGE
+  - SINGULARITY_OPTIONS
 attributes:
   #desktop: "xfce"
-  container_image:
+  SINGULARITY_IMAGE:
     widget: "hidden_field"
     value: "/sdf/sw/images/xfce/ubuntu18.04/xfce@ubuntu18.04.sif"
+  SINGULARITY_OPTIONS:
+    widget: "hidden_field"
+    value: " "
   desktop:
     widget: "select"
     label: Desktop Environment 
