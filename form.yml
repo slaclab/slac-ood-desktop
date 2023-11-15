@@ -31,7 +31,7 @@ attributes:
       Chose whether to use [xfce] or [mate] for your desktop
       [xfce]: https://www.xfce.org/
       [mate]: https://ubuntu-mate.org/
-  bc_vnc_idle: 30
+  bc_vnc_idle: 1800
   bc_vnc_resolution:
     required: true
   slurm_account:
