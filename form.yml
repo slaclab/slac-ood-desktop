@@ -17,7 +17,7 @@ attributes:
   #desktop: "xfce"
   SINGULARITY_IMAGE:
     widget: "hidden_field"
-    value: "/sdf/sw/images/xfce/ubuntu18.04/xfce@ubuntu18.04.sif"
+    value: "/sdf/sw/images/x11-docker/x11-docker_latest.sif"
   SINGULARITY_OPTIONS:
     widget: "hidden_field"
     value: " "
