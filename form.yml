@@ -3,11 +3,12 @@ form:
   - bc_vnc_idle
   - desktop
   - slurm_account
+  - slurm_partition
+  - slurm_reservation
   - bc_num_hours
   - bc_num_cores
   - mem
   - num_gpus
-  - gpu_type
   - bc_vnc_resolution
   - bc_email_on_started
   - SINGULARITY_IMAGE
@@ -35,11 +36,15 @@ attributes:
     required: true
   slurm_account:
     label: "Account"
+    help: Slurm account to use 
+  slurm_partition:
+    label: "Partition"
     help: |
       Slurm [Partition] to launch the Desktop on
 
       [Partition]: /public/doc/#/batch-compute?id=partition
-    value: "shared"
+  slurm_reservation:
+    label: "Reservation"
   bc_num_hours:
     widget: "number_field"
     help: |
@@ -52,7 +57,7 @@ attributes:
     help: |
       Number of cpu cores available for Desktop instance
     min: 1
-    max: 44
+    max: 120
     step: 1
   mem:
     widget: "number_field"
@@ -63,16 +68,6 @@ attributes:
     min: 128
     max: 256000
     step: 128
-  gpu_type:
-    widget: "select"
-    label: "GPU Type"
-    help: |
-      Make and model of GPU(s) to request
-    options:
-      - [ "Any", "Any" ]
-      - [ "Nvidia Geforce 2080Ti", "geforce_rtx_2080_ti" ]
-      - [ "Nvidia Geforce 1080Ti", "geforce_gtx_1080_ti" ]
-      - [ "Nvidia Tesla V100", "v100" ]
   num_gpus:
     widget: "number_field"
     label: "Number of GPUs"
