@@ -13,4 +13,4 @@ script:
     - "-c <%= bc_num_cores %>"
     - "--mem=<%= mem %>"
     <% if gpus > 0 %>- "--gpus=<%= gpu_str %>"<% end %>
-    <% if not slurm_reservation.blank? %>- "--reservation='<%= slurm_reservation %>'"<% end %>
+    <% if not slurm_reservation.blank? %>- "--reservation=<%= slurm_reservation %>"<% end %>
