@@ -43,4 +43,4 @@ else
 fi
 
 # Start up xfce desktop (block until user logs out of desktop)
-xfce4-session
+dbus-launch xfce4-session
