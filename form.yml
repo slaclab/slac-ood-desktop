@@ -1,6 +1,6 @@
 ---
 form:
-  - bc_vnc_idle
+  - SINGULARITY_IMAGE
   - desktop
   - slurm_account
   - slurm_partition
@@ -9,9 +9,9 @@ form:
   - bc_num_cores
   - mem
   - num_gpus
+  - bc_vnc_idle
   - bc_vnc_resolution
   - bc_email_on_started
-  - SINGULARITY_IMAGE
   - SINGULARITY_OPTIONS
 attributes:
   SINGULARITY_IMAGE:
