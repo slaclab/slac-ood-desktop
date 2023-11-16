@@ -14,10 +14,11 @@ form:
   - SINGULARITY_IMAGE
   - SINGULARITY_OPTIONS
 attributes:
-  #desktop: "xfce"
   SINGULARITY_IMAGE:
-    widget: "hidden_field"
-    value: "/sdf/sw/images/x11-docker/x11-docker_latest.sif"
+     widget: "select"
+     options:
+     - [ "latest", "/sdf/sw/images/x11-docker/x11-docker@latest.sif" ]
+     - [ "20231115-0", "/sdf/sw/images/x11-docker/x11-docker@20231115-0.sif" ]
   SINGULARITY_OPTIONS:
     widget: "hidden_field"
     value: " "
@@ -26,7 +27,6 @@ attributes:
     label: Desktop Environment 
     options:
     - ["xfce","xfce"]
-    - ["mate","mate"]
     help: |
       Chose whether to use [xfce] or [mate] for your desktop
       [xfce]: https://www.xfce.org/
