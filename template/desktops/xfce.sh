@@ -19,6 +19,8 @@ fi
 # Disable startup services
 xfconf-query -c xfce4-session -p /startup/ssh-agent/enabled -n -t bool -s false
 xfconf-query -c xfce4-session -p /startup/gpg-agent/enabled -n -t bool -s false
+xfconf-query -c xfce4-screensaver -np '/lock/enabled' -s 'true' 
+xfconf-query -c xfce4-screensaver -np '/lock/enabled' -s 'false'
 
 # Disable useless services on autostart
 AUTOSTART="${HOME}/.config/autostart"
