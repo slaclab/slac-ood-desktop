@@ -17,8 +17,8 @@ attributes:
   SINGULARITY_IMAGE:
      widget: "select"
      options:
-     - [ "latest", "/sdf/sw/images/x11-desktop/x11-desktop@latest.sif" ]
-     - [ "20231115.0", "/sdf/sw/images/x11-desktop/x11-desktop@20231115.0.sif" ]
+     - [ "latest", "/sdf/sw/images/x11-desktop/s3df-desktop@latest.sif" ]
+     - [ "20231117.0", "/sdf/sw/images/x11-desktop/s3df-desktop@20231117.0.sif" ]
   SINGULARITY_OPTIONS:
     widget: "hidden_field"
     value: " "
