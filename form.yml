@@ -9,6 +9,7 @@ form:
   - bc_num_cores
   - mem
   - num_gpus
+  - slurm_constraint
   - bc_vnc_idle
   - bc_vnc_resolution
   - bc_email_on_started
@@ -45,6 +46,10 @@ attributes:
       [Partition]: /public/doc/#/batch-compute?id=partition
   slurm_reservation:
     label: "Reservation"
+  slurm_constraint:
+    label: "Constraints"
+    help: "Slurm constraints to use (leave blank to ignore)"
+    pattern: "^.*$"
   bc_num_hours:
     widget: "number_field"
     help: |
